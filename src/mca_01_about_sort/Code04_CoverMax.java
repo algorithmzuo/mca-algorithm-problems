@@ -1,7 +1,6 @@
 package mca_01_about_sort;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Code04_CoverMax {
