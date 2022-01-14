@@ -23,8 +23,6 @@ public class Code02_EvenTimesOddTimes {
 		// eor :     00110010110111000
 		// rightOne :00000000000001000
 		int rightOne = eor & (-eor); // 提取出最右的1
-		
-		
 		int onlyOne = 0; // eor'
 		for (int i = 0 ; i < arr.length;i++) {
 			//  arr[1] =  111100011110000
