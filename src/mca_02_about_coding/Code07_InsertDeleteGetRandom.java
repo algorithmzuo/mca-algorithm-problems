@@ -2,7 +2,7 @@ package mca_02_about_coding;
 
 import java.util.HashMap;
 
-public class Problem_0380_InsertDeleteGetRandom {
+public class Code07_InsertDeleteGetRandom {
 
 	public class RandomizedSet {
 

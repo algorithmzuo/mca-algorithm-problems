@@ -1,4 +1,4 @@
-package mca_01_about_sort;
+package mca_02_about_coding;
 
 // 来自小红书
 // 一个无序数组长度为n，所有数字都不一样，并且值都在[0...n-1]范围上
