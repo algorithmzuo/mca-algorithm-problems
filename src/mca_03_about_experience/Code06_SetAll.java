@@ -1,8 +1,8 @@
-package mca_04_about_data_structure;
+package mca_03_about_experience;
 
 import java.util.HashMap;
 
-public class Code05_SetAll {
+public class Code06_SetAll {
 
 	public static class MyValue<V> {
 		public V value;

@@ -1,10 +1,10 @@
-package mca_05_about_math_greedy;
+package mca_03_about_experience;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.TreeSet;
 
-public class Code05_LowestLexicography {
+public class Code04_LowestLexicography {
 
 	public static String lowestString1(String[] strs) {
 		if (strs == null || strs.length == 0) {
