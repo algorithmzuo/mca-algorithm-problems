@@ -21,14 +21,15 @@ public class Code04_ZigZagPrintMatrix {
 		System.out.println();
 	}
 
-	public static void printLevel(int[][] m, int tR, int tC, int dR, int dC, boolean f) {
+	public static void printLevel(int[][] m, 
+			int Arow, int ACol, int Brow, int Bcol, boolean f) {
 		if (f) {
-			while (tR != dR + 1) {
-				System.out.print(m[tR++][tC--] + " ");
+			while (Arow != Brow + 1) {
+				System.out.print(m[Arow++][ACol--] + " ");
 			}
 		} else {
-			while (dR != tR - 1) {
-				System.out.print(m[dR--][dC++] + " ");
+			while (Brow != Arow - 1) {
+				System.out.print(m[Brow--][Bcol++] + " ");
 			}
 		}
 	}

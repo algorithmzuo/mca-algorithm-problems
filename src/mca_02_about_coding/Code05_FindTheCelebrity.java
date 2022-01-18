@@ -1,7 +1,6 @@
 package mca_02_about_coding;
 
 public class Code05_FindTheCelebrity {
-
 	// 提交时不要提交这个函数，因为默认系统会给你这个函数
 	// knows方法，自己不认识自己
 	public static boolean knows(int x, int i) {

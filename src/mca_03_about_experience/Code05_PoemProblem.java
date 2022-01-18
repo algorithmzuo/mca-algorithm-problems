@@ -14,7 +14,7 @@ import java.util.HashMap;
 // 给定一个数组arr, 返回最长的有效子序列长度
 // 题目限制 : arr长度 <= 4000, arr中的值<= 10^9
 // 离散化之后，arr长度 <= 4000,  arr中的值<= 4000
-public class Code02_PoemProblem {
+public class Code05_PoemProblem {
 
 	// arr[i.....]符合规则连接的最长子序列长度
 //	public static int zuo(int[] arr, int i) {

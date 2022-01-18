@@ -2,7 +2,7 @@ package mca_03_about_experience;
 
 import java.util.Arrays;
 
-public class Code04_MaxGap {
+public class Code06_MaxGap {
 
 	public static int maxGap(int[] nums) {
 		if (nums == null || nums.length < 2) {

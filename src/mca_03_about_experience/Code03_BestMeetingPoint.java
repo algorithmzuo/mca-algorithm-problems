@@ -1,6 +1,7 @@
 package mca_03_about_experience;
 
-public class Problem_0296_BestMeetingPoint {
+// 测试链接 : https://leetcode.com/problems/best-meeting-point/
+public class Code03_BestMeetingPoint {
 
 	public static int minTotalDistance(int[][] grid) {
 		int N = grid.length;

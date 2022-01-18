@@ -7,6 +7,40 @@ import java.util.Map.Entry;
 
 public class Code01_FindKMajority {
 
+	public static void water(int[] arr) {
+		if (arr == null || arr.length == 0) {
+			System.out.println("没有水王数");
+		} else {
+			int target = 0;
+			int hp = 0;
+			for (int cur : arr) {
+				if (hp == 0) {
+					target = cur;
+					hp = 1;
+				} else if (cur != target) {
+					hp--;
+				} else {
+					hp++;
+				}
+			}
+			if (hp == 0) {
+				System.out.println("没有水王数");
+				return;
+			}
+			int times = 0;
+			for (int cur : arr) {
+				if (target == cur) {
+					times++;
+				}
+			}
+			if (times > arr.length / 2) {
+				System.out.println("水王数是 : " + target);
+			} else {
+				System.out.println("没有水王数");
+			}
+		}
+	}
+
 	public static void printHalfMajor(int[] arr) {
 		int cand = 0;
 		int HP = 0;
@@ -20,7 +54,7 @@ public class Code01_FindKMajority {
 				HP--;
 			}
 		}
-		if(HP == 0) {
+		if (HP == 0) {
 			System.out.println("no such number.");
 			return;
 		}
@@ -56,10 +90,7 @@ public class Code01_FindKMajority {
 			}
 		}
 		// 所有可能的候选，都在cands表中！遍历一遍arr，每个候选收集真实次数
-		
-		
-		
-		
+
 		HashMap<Integer, Integer> reals = getReals(arr, cands);
 		boolean hasPrint = false;
 		for (Entry<Integer, Integer> set : cands.entrySet()) {
@@ -87,8 +118,7 @@ public class Code01_FindKMajority {
 		}
 	}
 
-	public static HashMap<Integer, Integer> getReals(int[] arr,
-			HashMap<Integer, Integer> cands) {
+	public static HashMap<Integer, Integer> getReals(int[] arr, HashMap<Integer, Integer> cands) {
 		HashMap<Integer, Integer> reals = new HashMap<Integer, Integer>();
 		for (int i = 0; i != arr.length; i++) {
 			int curNum = arr[i];
