@@ -1,9 +1,9 @@
-package mca_02_about_coding;
+package mca_03_about_experience;
 
 // 来自小红书
 // 一个无序数组长度为n，所有数字都不一样，并且值都在[0...n-1]范围上
 // 返回让这个无序数组变成有序数组的最小交换次数
-public class Code06_MinSwapTimes {
+public class Code01_MinSwapTimes {
 
 	// 纯暴力，arr长度大一点都会超时
 	// 但是绝对正确

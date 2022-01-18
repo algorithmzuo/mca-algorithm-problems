@@ -1,4 +1,4 @@
-package mca_03_about_experience;
+package mca_09_dp;
 
 // 本题测试链接 : https://leetcode.com/problems/longest-substring-without-repeating-characters/
 public class Code01_LongestSubstringWithoutRepeatingCharacters {
