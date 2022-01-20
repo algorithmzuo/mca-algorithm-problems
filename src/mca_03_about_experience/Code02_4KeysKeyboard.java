@@ -19,20 +19,16 @@ public class Code02_4KeysKeyboard {
 	// 以此说明：来到i的时候，包括i在内最多有连续4次粘贴行为
 	// 那么就尝试：连续1次、连续2次、连续3次、连续4次粘贴行为即可
 	public static int maxA(int n) {
-		// dp[0] 1步以内的最优解
-		// dp[1] 2步以内的最优解
-		// dp[2] 3步以内的最优解
-		// dp[i] i+1步以内的最优解
-		int[] dp = new int[n];
-		for (int i = 0; i < 6 && i < n; i++) {
-			dp[i] = i + 1;
+		int[] dp = new int[n + 1];
+		for (int i = 1; i <= 6 && i <= n; i++) {
+			dp[i] = i;
 		}
-		for (int i = 6; i < n; i++) {
+		for (int i = 7; i <= n; i++) {
 			dp[i] = Math.max(
 					Math.max(dp[i - 3] * 2, dp[i - 4] * 3),
 					Math.max(dp[i - 5] * 4, dp[i - 6] * 5));
 		}
-		return dp[n - 1];
+		return dp[n];
 	}
 
 }

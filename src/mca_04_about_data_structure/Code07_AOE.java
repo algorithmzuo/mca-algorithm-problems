@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 返回：int 次数
  * 
  * */
-public class Code06_AOE {
+public class Code07_AOE {
 
 	// 纯暴力解法
 	public static int minAoe1(int[] x, int[] hp, int range) {
