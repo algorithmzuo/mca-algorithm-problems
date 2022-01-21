@@ -1,6 +1,6 @@
 package mca_02_about_coding;
 
-public class Code03_RotateMatrix {
+public class Code03_PrintMatrixZigZag {
 
 	public static void print(int[][] matrix) {
 		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
