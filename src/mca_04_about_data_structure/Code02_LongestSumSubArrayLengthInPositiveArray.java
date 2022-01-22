@@ -1,26 +1,27 @@
 package mca_04_about_data_structure;
 
-import java.util.HashMap;
+public class Code02_LongestSumSubArrayLengthInPositiveArray {
 
-public class Code02_LongestSumSubArrayLength {
-
-	public static int maxLength(int[] arr, int k) {
-		if (arr == null || arr.length == 0) {
+	public static int getMaxLength(int[] arr, int K) {
+		if (arr == null || arr.length == 0 || K <= 0) {
 			return 0;
 		}
-		// key:前缀和
-		// value : 0~value这个前缀和是最早出现key这个值的
-		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		map.put(0, -1); // important
+		int left = 0;
+		int right = 0;
+		int sum = arr[0];
 		int len = 0;
-		int sum = 0;
-		for (int i = 0; i < arr.length; i++) {
-			sum += arr[i];
-			if (map.containsKey(sum - k)) {
-				len = Math.max(i - map.get(sum - k), len);
-			}
-			if (!map.containsKey(sum)) {
-				map.put(sum, i);
+		while (right < arr.length) {
+			if (sum == K) {
+				len = Math.max(len, right - left + 1);
+				sum -= arr[left++];
+			} else if (sum < K) {
+				right++;
+				if (right == arr.length) {
+					break;
+				}
+				sum += arr[right];
+			} else {
+				sum -= arr[left++];
 			}
 		}
 		return len;
@@ -49,10 +50,10 @@ public class Code02_LongestSumSubArrayLength {
 	}
 
 	// for test
-	public static int[] generateRandomArray(int size, int value) {
-		int[] ans = new int[(int) (Math.random() * size) + 1];
-		for (int i = 0; i < ans.length; i++) {
-			ans[i] = (int) (Math.random() * value) - (int) (Math.random() * value);
+	public static int[] generatePositiveArray(int size, int value) {
+		int[] ans = new int[size];
+		for (int i = 0; i != size; i++) {
+			ans[i] = (int) (Math.random() * value) + 1;
 		}
 		return ans;
 	}
@@ -69,12 +70,11 @@ public class Code02_LongestSumSubArrayLength {
 		int len = 50;
 		int value = 100;
 		int testTime = 500000;
-
 		System.out.println("test begin");
 		for (int i = 0; i < testTime; i++) {
-			int[] arr = generateRandomArray(len, value);
-			int K = (int) (Math.random() * value) - (int) (Math.random() * value);
-			int ans1 = maxLength(arr, K);
+			int[] arr = generatePositiveArray(len, value);
+			int K = (int) (Math.random() * value) + 1;
+			int ans1 = getMaxLength(arr, K);
 			int ans2 = right(arr, K);
 			if (ans1 != ans2) {
 				System.out.println("Oops!");
@@ -86,7 +86,6 @@ public class Code02_LongestSumSubArrayLength {
 			}
 		}
 		System.out.println("test end");
-
 	}
 
 }

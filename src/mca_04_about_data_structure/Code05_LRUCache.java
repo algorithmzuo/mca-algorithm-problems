@@ -3,7 +3,7 @@ package mca_04_about_data_structure;
 import java.util.HashMap;
 
 // 本题测试链接 : https://leetcode.com/problems/lru-cache/
-public class Code03_LRUCache {
+public class Code05_LRUCache {
 
 	public class LRUCache {
 
