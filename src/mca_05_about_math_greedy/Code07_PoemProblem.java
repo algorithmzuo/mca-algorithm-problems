@@ -1,4 +1,4 @@
-package mca_04_about_data_structure;
+package mca_05_about_math_greedy;
 
 import java.util.Arrays;
 import java.util.HashMap;
