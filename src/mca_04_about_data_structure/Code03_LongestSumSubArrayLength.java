@@ -2,7 +2,58 @@ package mca_04_about_data_structure;
 
 import java.util.HashMap;
 
+// 
 public class Code03_LongestSumSubArrayLength {
+	
+	
+	
+	
+	public static int sumTargetMaxLength(int[] arr, int target) {
+		if(arr == null || arr.length == 0) {
+			return 0;
+		}
+		// 0~4  100
+		// (100, 4)
+		// 0~8  100
+		// (100, 4)
+		// key ：某个前缀和
+		// value : 最早出现的位置！
+		HashMap<Integer, Integer> preSumEarlyMap = new HashMap<>();
+		// 一个数也没有的时候，有前缀和！是0！
+		preSumEarlyMap.put(0, -1);
+		int sum = 0; // 0 ~ i 整体前缀和！
+		int ans = 0;
+		for(int i = 0; i < arr.length;i++) {
+			sum += arr[i];
+			int findPreSum = sum - target;
+			if(preSumEarlyMap.containsKey(findPreSum)) {
+				int earlyIndex = preSumEarlyMap.get(findPreSum);
+				int iendAns = i - earlyIndex;
+				ans = Math.max(ans, iendAns);
+			}
+			if(!preSumEarlyMap.containsKey(sum)) {
+				preSumEarlyMap.put(sum, i);
+			}
+		}
+		return ans;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public static int maxLength(int[] arr, int k) {
 		if (arr == null || arr.length == 0) {

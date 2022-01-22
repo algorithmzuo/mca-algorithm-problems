@@ -33,6 +33,7 @@ public class Code05_LRUCache {
 			}
 		}
 
+		// 自己要实现的双向链表！
 		public class NodeDoubleLinkedList {
 			private Node head;
 			private Node tail;
@@ -42,6 +43,7 @@ public class Code05_LRUCache {
 				tail = null;
 			}
 
+			// 让你加一个节点！往尾巴上加！
 			public void addNode(Node newNode) {
 				if (newNode == null) {
 					return;
@@ -56,21 +58,25 @@ public class Code05_LRUCache {
 				}
 			}
 
-			public void moveNodeToTail(Node node) {
-				if (tail == node) {
+			// 一定能保证，x就在双向链表上！
+			// 请把，x之前，和x之后，的节点之间重连！抠出x
+			// 把x放到尾巴上去！
+			public void moveNodeToTail(Node x) {
+				if (tail == x) {
 					return;
 				}
-				if (head == node) {
-					head = node.next;
+				// x不是尾巴！x右边一定是有节点的！不为空！
+				if (head == x) { // 前边没有节点，x直接去尾巴！，head要往下走！
+					head = x.next;
 					head.last = null;
-				} else {
-					node.last.next = node.next;
-					node.next.last = node.last;
+				} else { // x有前！也有后！
+					x.last.next = x.next;
+					x.next.last = x.last;
 				}
-				node.last = tail;
-				node.next = null;
-				tail.next = node;
-				tail = node;
+				x.last = tail;
+				x.next = null;
+				tail.next = x;
+				tail = x;
 			}
 
 			public Node removeHead() {
