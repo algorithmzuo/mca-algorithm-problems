@@ -1,6 +1,6 @@
 package mca_05_about_math_greedy;
 
-public class Code03_MSumToN {
+public class Code02_MSumToN {
 
 	public static boolean isMSum1(int num) {
 		for (int start = 1; start <= num; start++) {

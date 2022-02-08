@@ -1,4 +1,4 @@
-package mca_05_about_math_greedy;
+package mca_06_about_window_monotonicity_1;
 
 import java.util.HashMap;
 import java.util.HashSet;

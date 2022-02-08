@@ -9,7 +9,7 @@ package mca_05_about_math_greedy;
 // 如果将"??"替换为"ba" ，即"aababbb"，则由相等字符组成的最长子串长度为3
 // 那么方案二是更好的结果，返回3
 // S的长度 <= 10^6
-public class Code05_MinContinuousFragment {
+public class Code06_MinContinuousFragment {
 
 	// 暴力方法
 	// 为了验证

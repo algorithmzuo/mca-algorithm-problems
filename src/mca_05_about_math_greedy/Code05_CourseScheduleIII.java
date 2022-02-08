@@ -3,7 +3,8 @@ package mca_05_about_math_greedy;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
-public class Problem_0630_CourseScheduleIII {
+// leetcode 630题
+public class Code05_CourseScheduleIII {
 
 	public static int scheduleCourse(int[][] courses) {
 		// courses[i]  = {花费，截止}
@@ -19,8 +20,6 @@ public class Problem_0630_CourseScheduleIII {
 				time += c[0];
 			} else { // 当前时间 + 花费 > 截止时间的, 只有淘汰掉某课，当前的课才能进来！
 				// 
-				
-				
 				if (!heap.isEmpty() && heap.peek() > c[0]) {
 //					time -= heap.poll();
 //					heap.add(c[0]);

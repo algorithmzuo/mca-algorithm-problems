@@ -1,7 +1,7 @@
-package mca_05_about_math_greedy;
+package mca_06_about_window_monotonicity_1;
 
 // 本题测试链接 : https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
-public class Code06_MinLengthForSort {
+public class Code07_MinLengthForSort {
 
 	public static int findUnsortedSubarray(int[] nums) {
 		if (nums == null || nums.length < 2) {

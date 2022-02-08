@@ -1,6 +1,6 @@
 package mca_05_about_math_greedy;
 
-public class Code02_EatGrass {
+public class Code03_EatGrass {
 
 	// 如果n份草，最终先手赢，返回"先手"
 	// 如果n份草，最终后手赢，返回"后手"

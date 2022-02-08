@@ -3,7 +3,7 @@ package mca_05_about_math_greedy;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Code03_BestArrange {
+public class Code04_BestArrange {
 
 	public static class Program {
 		public int start;
