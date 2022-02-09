@@ -20,7 +20,10 @@ public class Code02_MSumToN {
 
 	public static boolean isMSum2(int num) {
 //		
-//		return num == (num & (~num + 1));
+//		return num == (num & (~num + 1)); // 是2的某次方，不是连续和！
+//		
+//		
+//		return !(num == (num & (~num + 1)));
 //		
 //		return num == (num & (-num));
 //		
