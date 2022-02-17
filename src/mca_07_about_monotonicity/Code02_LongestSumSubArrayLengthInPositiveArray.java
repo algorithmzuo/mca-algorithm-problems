@@ -1,6 +1,6 @@
-package mca_07_about_window_monotonicity_1;
+package mca_07_about_monotonicity;
 
-public class Code01_LongestSumSubArrayLengthInPositiveArray {
+public class Code02_LongestSumSubArrayLengthInPositiveArray {
 
 	public static int getMaxLength(int[] arr, int K) {
 		if (arr == null || arr.length == 0 || K <= 0) {

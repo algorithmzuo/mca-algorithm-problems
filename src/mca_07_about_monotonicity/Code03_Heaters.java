@@ -1,8 +1,8 @@
-package mca_08_about_window_monotonicity_2;
+package mca_07_about_monotonicity;
 
 import java.util.Arrays;
 
-public class Problem_0475_Heaters {
+public class Code03_Heaters {
 
 	// 比如地点是7, 9, 14
 	// 供暖点的位置: 1 3 4 5 13 15 17

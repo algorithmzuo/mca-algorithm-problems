@@ -1,4 +1,4 @@
-package mca_07_about_window_monotonicity_1;
+package mca_07_about_monotonicity;
 
 import java.util.Arrays;
 

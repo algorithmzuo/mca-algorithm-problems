@@ -1,8 +1,8 @@
-package mca_08_about_window_monotonicity_2;
+package mca_07_about_monotonicity;
 
 import java.util.HashMap;
 
-public class Code05_IsStepSum {
+public class Code06_IsStepSum {
 
 	public static boolean isStepSum(int stepSum) {
 		int L = 0;

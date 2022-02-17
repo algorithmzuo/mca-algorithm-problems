@@ -1,4 +1,4 @@
-package mca_07_about_window_monotonicity_1;
+package mca_08_about_window_monotonicity_1;
 
 // leetcode原题
 // 测试链接：https://leetcode.com/problems/split-array-largest-sum/

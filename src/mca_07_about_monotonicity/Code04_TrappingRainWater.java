@@ -1,7 +1,7 @@
-package mca_08_about_window_monotonicity_2;
+package mca_07_about_monotonicity;
 
 // 本题测试链接 : https://leetcode.com/problems/trapping-rain-water/
-public class Code02_TrappingRainWater {
+public class Code04_TrappingRainWater {
 
 	public static int trap(int[] arr) {
 		if (arr == null || arr.length < 2) {
