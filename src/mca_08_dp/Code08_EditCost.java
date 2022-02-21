@@ -1,6 +1,6 @@
 package mca_08_dp;
 
-public class Code07_EditCost {
+public class Code08_EditCost {
 
 	public static int minCost1(String s1, String s2, int ic, int dc, int rc) {
 		if (s1 == null || s2 == null) {

@@ -1,6 +1,6 @@
 package mca_08_dp;
 
-public class Code04_CardsInLine {
+public class Code05_CardsInLine {
 
 	// 根据规则，返回获胜者的分数
 	public static int win1(int[] arr) {

@@ -1,7 +1,7 @@
 package mca_08_dp;
 
 // 本题测试链接 : https://leetcode.com/problems/maximum-subarray/
-public class Code03_SubArrayMaxSum {
+public class Code04_SubArrayMaxSum {
 
 	public static int maxSubArray(int[] arr) {
 		if (arr == null || arr.length == 0) {

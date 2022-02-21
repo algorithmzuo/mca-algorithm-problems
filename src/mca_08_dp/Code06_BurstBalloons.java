@@ -1,7 +1,7 @@
 package mca_08_dp;
 
 // 本题测试链接 : https://leetcode.com/problems/burst-balloons/
-public class Code05_BurstBalloons {
+public class Code06_BurstBalloons {
 
 	public static int maxCoins0(int[] arr) {
 		// [3,2,1,3]

@@ -1,6 +1,6 @@
 package mca_08_dp;
 
-public class Code09_HorseJump {
+public class Code10_HorseJump {
 
 	// 当前来到的位置是（x,y）
 	// 还剩下rest步需要跳

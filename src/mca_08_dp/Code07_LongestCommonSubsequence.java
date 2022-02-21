@@ -2,7 +2,7 @@ package mca_08_dp;
 
 // 这个问题leetcode上可以直接测
 // 链接：https://leetcode.com/problems/longest-common-subsequence/
-public class Code06_LongestCommonSubsequence {
+public class Code07_LongestCommonSubsequence {
 
 	public static int longestCommonSubsequence1(String s1, String s2) {
 		if (s1 == null || s2 == null || s1.length() == 0 || s2.length() == 0) {

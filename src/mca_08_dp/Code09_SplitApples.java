@@ -10,7 +10,7 @@ package mca_08_dp;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Code08_SplitApples {
+public class Code09_SplitApples {
 
 	public static int test(int apples, int plates) {
 		// 1000
