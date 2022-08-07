@@ -88,33 +88,4 @@ public class Code03_IsCBT {
 		return new Info(isFull, isCBT, height);
 	}
 
-	// for test
-	public static TreeNode generateRandomBST(int maxLevel, int maxValue) {
-		return generate(1, maxLevel, maxValue);
-	}
-
-	// for test
-	public static TreeNode generate(int level, int maxLevel, int maxValue) {
-		if (level > maxLevel || Math.random() < 0.5) {
-			return null;
-		}
-		TreeNode head = new TreeNode((int) (Math.random() * maxValue));
-		head.left = generate(level + 1, maxLevel, maxValue);
-		head.right = generate(level + 1, maxLevel, maxValue);
-		return head;
-	}
-
-	public static void main(String[] args) {
-		int maxLevel = 5;
-		int maxValue = 100;
-		int testTimes = 1000000;
-		for (int i = 0; i < testTimes; i++) {
-			TreeNode head = generateRandomBST(maxLevel, maxValue);
-			if (isCompleteTree1(head) != isCompleteTree2(head)) {
-				System.out.println("Oops!");
-			}
-		}
-		System.out.println("finish!");
-	}
-
 }

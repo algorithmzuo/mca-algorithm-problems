@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Stack;
 
 // 本题为leetcode原题
-// 测试链接：https://leetcode.com/problems/number-of-islands/
+// 测试链接：https://leetcode.cn/problems/number-of-islands/
 // 所有方法都可以直接通过
 public class Code04_NumberOfIslands {
 
@@ -232,85 +232,6 @@ public class Code04_NumberOfIslands {
 		public int sets() {
 			return sets;
 		}
-
-	}
-
-	// 为了测试
-	public static char[][] generateRandomMatrix(int row, int col) {
-		char[][] board = new char[row][col];
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < col; j++) {
-				board[i][j] = Math.random() < 0.5 ? '1' : '0';
-			}
-		}
-		return board;
-	}
-
-	// 为了测试
-	public static char[][] copy(char[][] board) {
-		int row = board.length;
-		int col = board[0].length;
-		char[][] ans = new char[row][col];
-		for (int i = 0; i < row; i++) {
-			for (int j = 0; j < col; j++) {
-				ans[i][j] = board[i][j];
-			}
-		}
-		return ans;
-	}
-
-	// 为了测试
-	public static void main(String[] args) {
-		int row = 0;
-		int col = 0;
-		char[][] board1 = null;
-		char[][] board2 = null;
-		char[][] board3 = null;
-		long start = 0;
-		long end = 0;
-
-		row = 1000;
-		col = 1000;
-		board1 = generateRandomMatrix(row, col);
-		board2 = copy(board1);
-		board3 = copy(board1);
-
-		System.out.println("感染方法、并查集(map实现)、并查集(数组实现)的运行结果和运行时间");
-		System.out.println("随机生成的二维矩阵规模 : " + row + " * " + col);
-
-		start = System.currentTimeMillis();
-		System.out.println("感染方法的运行结果: " + numIslands3(board1));
-		end = System.currentTimeMillis();
-		System.out.println("感染方法的运行时间: " + (end - start) + " ms");
-
-		start = System.currentTimeMillis();
-		System.out.println("并查集(map实现)的运行结果: " + numIslands1(board2));
-		end = System.currentTimeMillis();
-		System.out.println("并查集(map实现)的运行时间: " + (end - start) + " ms");
-
-		start = System.currentTimeMillis();
-		System.out.println("并查集(数组实现)的运行结果: " + numIslands2(board3));
-		end = System.currentTimeMillis();
-		System.out.println("并查集(数组实现)的运行时间: " + (end - start) + " ms");
-
-		System.out.println();
-
-		row = 10000;
-		col = 10000;
-		board1 = generateRandomMatrix(row, col);
-		board3 = copy(board1);
-		System.out.println("感染方法、并查集(数组实现)的运行结果和运行时间");
-		System.out.println("随机生成的二维矩阵规模 : " + row + " * " + col);
-
-		start = System.currentTimeMillis();
-		System.out.println("感染方法的运行结果: " + numIslands3(board1));
-		end = System.currentTimeMillis();
-		System.out.println("感染方法的运行时间: " + (end - start) + " ms");
-
-		start = System.currentTimeMillis();
-		System.out.println("并查集(数组实现)的运行结果: " + numIslands2(board3));
-		end = System.currentTimeMillis();
-		System.out.println("并查集(数组实现)的运行时间: " + (end - start) + " ms");
 
 	}
 

@@ -20,12 +20,12 @@ public class Code01_CherryPickup {
 		StreamTokenizer in = new StreamTokenizer(br);
 		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 		while (in.nextToken() != StreamTokenizer.TT_EOF) {
-			int N = (int) in.nval;
-			in.nextToken();
 			int M = (int) in.nval;
-			int[][] matrix = new int[N][M];
-			for (int i = 0; i < N; i++) {
-				for (int j = 0; j < M; j++) {
+			in.nextToken();
+			int N = (int) in.nval;
+			int[][] matrix = new int[M][N];
+			for (int i = 0; i < M; i++) {
+				for (int j = 0; j < N; j++) {
 					in.nextToken();
 					matrix[i][j] = (int) in.nval;
 				}
