@@ -1,56 +1,35 @@
 package mca_08_dp;
 
-//有m个同样的苹果，认为苹果之间无差别
-//有n个同样的盘子，认为盘子之间也无差别
-//还有，比如5个苹果如果放进3个盘子，
-//那么1、3、1和1、1、3和3、1、1的放置方法，也认为是一种方法
-//如上的设定下，返回有多少种放置方法
-//测试链接 : https://www.nowcoder.com/practice/bfd8234bb5e84be0b493656e390bdebf
-//提交以下的code，提交时请把类名改成"Main"
+// 有m个同样的苹果，认为苹果之间无差别
+// 有n个同样的盘子，认为盘子之间也无差别
+// 还有，比如5个苹果如果放进3个盘子，
+// 那么1、3、1和1、1、3和3、1、1的放置方法，也认为是一种方法
+// 如上的设定下，返回有多少种放置方法
+// 测试链接 : https://www.nowcoder.com/practice/bfd8234bb5e84be0b493656e390bdebf
+// 请同学们务必参考如下代码中关于输入、输出的处理
+// 这是输入输出处理效率很高的写法
+// 提交以下的code，提交时请把类名改成"Main"
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.StreamTokenizer;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Code09_SplitApples {
-
-	public static int test(int apples, int plates) {
-		int[][] dp = new int[apples + 1][plates + 1];
-		for (int i = 0; i <= apples; i++) {
-			for (int j = 0; j <= plates; j++) {
-				dp[i][j] = -1;
-			}
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StreamTokenizer in = new StreamTokenizer(br);
+		PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+		while (in.nextToken() != StreamTokenizer.TT_EOF) {
+			int m = (int) in.nval;
+			in.nextToken();
+			int n = (int) in.nval;
+			out.println(ways3(m, n));
+			out.flush();
 		}
-		return f(apples, plates, dp);
-	}
-
-	public static int f(int apples, int plates, int[][] dp) {
-		if (dp[apples][plates] != -1) {
-			return dp[apples][plates];
-		}
-		int ans = 0;
-		if (apples == 0) {
-			ans = 1;
-		} else if (plates == 0) {
-			ans = 0;
-		} else {
-			if (plates > apples) {
-				ans = f(apples, apples, dp);
-			} else { // apples >= plates;
-				ans = f(apples, plates - 1, dp) + f(apples - plates, plates, dp);
-			}
-		}
-		dp[apples][plates] = ans;
-		return ans;
-	}
-
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		while (sc.hasNext()) {
-			int m = sc.nextInt();
-			int n = sc.nextInt();
-			int ways = ways3(m, n);
-			System.out.println(ways);
-		}
-		sc.close();
 	}
 
 	// 思路来自于分裂数问题
