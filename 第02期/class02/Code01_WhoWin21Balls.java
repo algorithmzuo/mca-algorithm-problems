@@ -8,7 +8,7 @@ package class02;
 // 每个人在自己的回合，一定要拿不超过3个球，不能不拿
 // 最终谁的总球数为偶数，谁赢
 // 请问谁有必胜策略
-public class Code06_WhoWin21Balls {
+public class Code01_WhoWin21Balls {
 
 	// balls = 21
 	// ball是奇数
