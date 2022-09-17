@@ -12,6 +12,25 @@ import java.util.PriorityQueue;
 // 假设：m远远大于n，比如n<=1000, m <= 10的9次方，该怎么做？
 public class Code02_MinWaitingTime {
 
+	// arr中，>= num 的最左位置，返回位置！下标！
+	// arr中，没有 >= num的数字，返回-1，表示不存在
+	public static int find(int[] arr, int num) {
+		int l = 0;
+		int r = arr.length - 1;
+		int m = 0;
+		int ans = -1;
+		while (l <= r) {
+			m = (l + r) / 2;
+			if (arr[m] >= num) {
+				ans = m;
+				r = m - 1;
+			} else {
+				l = m + 1;
+			}
+		}
+		return ans;
+	}
+
 	public static int minWaitingTime1(int[] arr, int m) {
 		if (arr == null || arr.length == 0) {
 			return -1;

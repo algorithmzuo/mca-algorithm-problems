@@ -10,6 +10,30 @@ package class02;
 // 请问谁有必胜策略
 public class Code01_WhoWin21Balls {
 
+	// zuo(21, 0, 0, "甲","乙")
+	// 甲 5个
+	// zuo(16, 0, 5, "乙", "甲")
+
+	// 当前球数balls，
+	// 先手，first
+	// 后手，second
+	// 所有人拿光球，谁的总球数是偶数，谁赢
+	// 返回赢家的字符串，first second
+	public static String zuo(int balls, int firstPick, int secondPick, String first, String second) {
+		if (balls == 0) {
+			return firstPick % 2 == 0 ? first : second;
+		}
+		// balls =2
+		// 还有的拼
+		for (int pick = 1; pick <= Math.min(3, balls); pick++) {
+			String win = zuo(balls - pick, secondPick, firstPick + pick, second, first);
+			if (win.equals(first)) {
+				return first;
+			}
+		}
+		return second;
+	}
+
 	// balls = 21
 	// ball是奇数
 	public static String win(int balls) {
@@ -154,9 +178,13 @@ public class Code01_WhoWin21Balls {
 
 	// 为了测试
 	public static void main(String[] args) {
-		for (int balls = 1; balls <= 500; balls += 2) {
-			System.out.println("球数为 " + balls + " 时 , 赢的是 " + win(balls));
+		for (int n = 1; n <= 20; n += 2) {
+			System.out.println(n + " : " + zuo(n, 0, 0, "甲", "乙"));
 		}
+
+//		for (int balls = 1; balls <= 500; balls += 2) {
+//			System.out.println("球数为 " + balls + " 时 , 赢的是 " + win(balls));
+//		}
 	}
 
 }
