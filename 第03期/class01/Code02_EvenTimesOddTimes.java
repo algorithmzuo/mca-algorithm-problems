@@ -5,79 +5,43 @@ public class Code02_EvenTimesOddTimes {
 	// arr中，只有一种数，出现奇数次
 	public static void printOddTimesNum1(int[] arr) {
 		int eor = 0;
-		for (int i = 0; i < arr.length; i++) {
-			eor ^= arr[i];
+		for (int num : arr) {
+			eor ^= num;
 		}
 		System.out.println(eor);
 	}
 
-	// arr中，有两种数，出现奇数次
-	public static void printOddTimesNum2(int[] arr) {
+	// 请保证，arr中，有两种数出现奇数次，其他的数都是偶数次
+	// 打印
+	public static void printOddTimesNumber(int[] arr) {
 		int eor = 0;
-		for (int i = 0; i < arr.length; i++) {
-			eor ^= arr[i];
+		for (int num : arr) {
+			eor ^= num;
 		}
-		// a 和 b是两种数
-		// eor != 0
-		// eor最右侧的1，提取出来
-		// eor :     00110010110111000
-		// rightOne :00000000000001000
-		int rightOne = eor & (-eor); // 提取出最右的1
-		
-		
-		int onlyOne = 0; // eor'
-		for (int i = 0 ; i < arr.length;i++) {
-			//  arr[1] =  111100011110000
-			// rightOne=  000000000010000
-			if ((arr[i] & rightOne) != 0) {
-				onlyOne ^= arr[i];
+		// eor = a ^ b
+		// 请把eor状态中，最右侧的1提取出来
+		// eor = 0000110010
+		// rightOne = 0000000010 & | ^ << >> >>>
+		// >> 带符号右移
+		// >>> 不带符号右移
+		// java 干啥的，自己查
+		int rightOne = eor & (-eor);
+		int zuo = 0;
+		for (int num : arr) {
+			// zuo只去异或一类，另一类忽略
+			if ((num & rightOne) == 0) {
+				zuo ^= num;
 			}
 		}
-		System.out.println(onlyOne + " " + (eor ^ onlyOne));
+		System.out.println("一个是 ：" + zuo);
+		System.out.println("另一个是 ：" + (eor ^ zuo));
 	}
 
-	
-	public static int bit1counts(int N) {
-		int count = 0;
-		
-		//   011011010000
-		//   000000010000     1
-		
-		//   011011000000
-		// 
-		
-		
-		
-		while(N != 0) {
-			int rightOne = N & ((~N) + 1);
-			count++;
-			N ^= rightOne;
-			// N -= rightOne
-		}
-		
-		
-		return count;
-		
-	}
-	
-	
 	public static void main(String[] args) {
-		int a = 5;
-		int b = 7;
-
-		a = a ^ b;
-		b = a ^ b;
-		a = a ^ b;
-
-		System.out.println(a);
-		System.out.println(b);
-
-		int[] arr1 = { 3, 3, 2, 3, 1, 1, 1, 3, 1, 1, 1 };
-		printOddTimesNum1(arr1);
-
-		int[] arr2 = { 4, 3, 4, 2, 2, 2, 4, 1, 1, 1, 3, 3, 1, 1, 1, 4, 2, 2 };
-		printOddTimesNum2(arr2);
-
+		// 5 7 521 14 10
+		int[] arr = { 5, 7, 14, 14, 521, 7, 10, 7, 5, 5, 521, 7, 7, 7, 5, 14 };
+		// 请找到 14 和 10
+		printOddTimesNumber(arr);
 	}
 
 }

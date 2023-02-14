@@ -15,8 +15,8 @@ public class Code01_Swap {
 		printBinary(a);
 		printBinary(b);
 		System.out.println("=======");
-		printBinary(a & b);
-		System.out.println(a & b);
+		printBinary(a ^ b);
+		System.out.println(a ^ b);
 
 		a = a ^ b;
 		b = a ^ b;

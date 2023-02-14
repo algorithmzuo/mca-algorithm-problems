@@ -1,6 +1,8 @@
 package class01;
 
 // leetcode 875题
+// 一定有答案
+// 管理员，1小时，5堆，-1
 public class Code05_KokoEatingBananas {
 
 	public static int minEatingSpeed(int[] piles, int h) {
@@ -9,6 +11,7 @@ public class Code05_KokoEatingBananas {
 		for (int pile : piles) {
 			R = Math.max(R, pile);
 		}
+		// 1......Max
 		int ans = 0;
 		int M = 0;
 		while (L <= R) {
@@ -23,6 +26,9 @@ public class Code05_KokoEatingBananas {
 		return ans;
 	}
 
+	// piles : 每一堆香蕉的个数，都在piles里
+	// speed : 猩猩的速度
+	// 在这个速度下，几小时吃完！
 	public static int hours(int[] piles, int speed) {
 		int ans = 0;
 		int offset = speed - 1;

@@ -1,128 +1,126 @@
 package class01;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Code07_HashMapAndSortedMap {
 
-	public static class Node {
-		public int value;
+	public static class Student {
+		public int age;
 
-		public Node(int v) {
-			value = v;
-		}
-	}
-
-	public static class Zuo {
-		public int value;
-
-		public Zuo(int v) {
-			value = v;
+		public Student(int a) {
+			age = a;
 		}
 	}
 
 	public static void main(String[] args) {
+		Student s1 = new Student(4);
+		Student s2 = new Student(4);
+		Student s3 = new Student(4);
+		HashSet<Student> set = new HashSet<>();
+		set.add(s1);
+		set.add(s2);
+		set.add(s3);
+		System.out.println(set.size());
+		Student s4 = new Student(4);
+		System.out.println(set.contains(s4));
 
-		HashMap<Integer, String> test = new HashMap<>();
-		Integer a = 19000000;
-		Integer b = 19000000;
-		System.out.println(a == b);
-
-		test.put(a, "我是3");
-		System.out.println(test.containsKey(b));
-
-		Zuo z1 = new Zuo(1);
-		Zuo z2 = new Zuo(1);
-		HashMap<Zuo, String> test2 = new HashMap<>();
-		test2.put(z1, "我是z1");
-		System.out.println(test2.containsKey(z2));
-
-		// UnSortedMap
 		HashMap<Integer, String> map = new HashMap<>();
-		map.put(1000000, "我是1000000");
-		map.put(2, "我是2");
-		map.put(3, "我是3");
-		map.put(4, "我是4");
-		map.put(5, "我是5");
-		map.put(6, "我是6");
-		map.put(1000000, "我是1000001");
+		map.put(7, "我是7");
+		map.remove(7);
+		map.put(7, "我是7");
+		map.put(7, "他是7");
+		map.get(7);
+		map.containsKey(7);
 
-		System.out.println(map.containsKey(1));
-		System.out.println(map.containsKey(10));
+		// O(1) 常数时间
 
-		System.out.println(map.get(4));
-		System.out.println(map.get(10));
-
-		map.put(4, "他是4");
-		System.out.println(map.get(4));
-
-		map.remove(4);
-		System.out.println(map.get(4));
-
-		// key
-		HashSet<String> set = new HashSet<>();
-		set.add("abc");
-		set.contains("abc");
-		set.remove("abc");
-
-		// 哈希表，增、删、改、查，在使用时，O（1）
-
-		System.out.println("=====================");
-
-		Integer c = 100000;
-		Integer d = 100000;
-		System.out.println(c.equals(d));
-
-		Integer e = 127; // - 128 ~ 127
-		Integer f = 127;
-		System.out.println(e == f);
-
-		HashMap<Node, String> map2 = new HashMap<>();
-		Node node1 = new Node(1);
-		Node node2 = node1;
-		map2.put(node1, "我是node1");
-		map2.put(node2, "我是node1");
-		System.out.println(map2.size());
-
-		System.out.println("======================");
-
-		// TreeMap 有序表：接口名
-		// 红黑树、avl、sb树、跳表
-		// O(logN)
-		System.out.println("有序表测试开始");
 		TreeMap<Integer, String> treeMap = new TreeMap<>();
-
-		treeMap.put(3, "我是3");
-		treeMap.put(4, "我是4");
-		treeMap.put(8, "我是8");
+		treeMap.put(-5, "我是5");
+		treeMap.put(15, "我是5");
+		treeMap.put(555, "我是5");
 		treeMap.put(5, "我是5");
-		treeMap.put(7, "我是7");
-		treeMap.put(1, "我是1");
-		treeMap.put(2, "我是2");
+		treeMap.put(3, "我是5");
+		treeMap.put(50, "我是5");
 
-		System.out.println(treeMap.containsKey(1));
-		System.out.println(treeMap.containsKey(10));
-
-		System.out.println(treeMap.get(4));
-		System.out.println(treeMap.get(10));
-
-		treeMap.put(4, "他是4");
-		System.out.println(treeMap.get(4));
-
-		// treeMap.remove(4);
-		System.out.println(treeMap.get(4));
-
-		System.out.println("新鲜：");
-
+		// put、remove、get、containsKey
+		// log N
 		System.out.println(treeMap.firstKey());
 		System.out.println(treeMap.lastKey());
-		// <= 4
-		System.out.println(treeMap.floorKey(4));
-		// >= 4
-		System.out.println(treeMap.ceilingKey(4));
-		// O(logN)
+		int num = -10;
+		// <= num 且离num最近的key
+		System.out.println(treeMap.floorKey(num));
+		// >= num 且离num最近的key
+		System.out.println(treeMap.ceilingKey(num));
+		System.out.println("==========");
+		Cat cat1 = new Cat(4, 40);
+		Cat cat2 = new Cat(3, 400);
+		Cat cat3 = new Cat(-9, 17);
+		Cat cat4 = new Cat(1000, 7);
 
+		Cat[] cats = { cat1, cat2, cat3, cat4 };
+
+		// 根据年龄排序
+		Arrays.sort(cats, (a, b) -> b.age - a.age);
+		for (Cat cat : cats) {
+			System.out.println(cat.age + " , " + cat.weight);
+		}
+
+		TreeSet<Cat> catSet = new TreeSet<>((a, b) -> b.age - a.age);
+		catSet.add(cat1);
+		catSet.add(cat2);
+		catSet.add(cat3);
+		catSet.add(cat4);
+
+		System.out.println(catSet.first().age);
+
+		// 根据重量排序
+
+		Integer[] arr = { 3, 4, 7, 2 };
+		Arrays.sort(arr, (a,b) -> b - a);
+		for(Integer x : arr) {
+			System.out.println(x);
+		}
+		
+		int[] arr2 = { 3, 4, 7, 2 };
+		Arrays.sort(arr2);
+		for(int x : arr2) {
+			System.out.println(x);
+		}
+	}
+
+	public static class CatComparator implements Comparator<Cat> {
+
+		// 返回负，o1好！
+		// 返回正，o2好！
+		// 返回0，o1、o2一样好！
+
+		@Override
+		public int compare(Cat o1, Cat o2) {
+//			if (o1.age < o2.age) {
+//				return -1;
+//			} else if (o1.age > o2.age) {
+//				return 1;
+//			} else {
+//				return 0;
+//			}
+			return o2.age - o1.age;
+		}
+
+	}
+
+	public static class Cat {
+		public int age;
+		public int weight;
+
+		public Cat(int a, int w) {
+			age = a;
+			weight = w;
+		}
 	}
 
 }

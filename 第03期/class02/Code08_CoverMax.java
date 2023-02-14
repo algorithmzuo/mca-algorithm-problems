@@ -1,4 +1,4 @@
-package class01;
+package class02;
 
 import java.util.Arrays;
 import java.util.Comparator;
