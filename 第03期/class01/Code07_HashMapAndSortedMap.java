@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeMap;
 
-public class Code06_HashMapAndSortedMap {
+public class Code07_HashMapAndSortedMap {
 
 	public static class Node {
 		public int value;

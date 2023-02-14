@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class Code07_CoverMax {
+public class Code08_CoverMax {
 
 	public static int maxCover1(int[][] lines) {
 		int min = Integer.MAX_VALUE;
