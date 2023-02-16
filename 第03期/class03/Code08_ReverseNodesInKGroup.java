@@ -1,6 +1,6 @@
 
 
-package class02;
+package class03;
 
 // 测试链接：https://leetcode.com/problems/reverse-nodes-in-k-group/
 public class Code08_ReverseNodesInKGroup {

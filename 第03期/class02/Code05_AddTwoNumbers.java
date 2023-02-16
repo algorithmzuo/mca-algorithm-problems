@@ -21,7 +21,9 @@ public class Code05_AddTwoNumbers {
 	public static ListNode addTwoNumbers(ListNode head1, ListNode head2) {
 		int len1 = listLength(head1);
 		int len2 = listLength(head2);
+		// 长链表 找到l
 		ListNode l = len1 >= len2 ? head1 : head2;
+		// 短链表 找到s
 		ListNode s = l == head1 ? head2 : head1;
 		ListNode curL = l;
 		ListNode curS = s;
@@ -36,6 +38,7 @@ public class Code05_AddTwoNumbers {
 			curL = curL.next;
 			curS = curS.next;
 		}
+		// 短链表没了
 		while (curL != null) {
 			curNum = curL.val + carry;
 			curL.val = (curNum % 10);
@@ -43,6 +46,7 @@ public class Code05_AddTwoNumbers {
 			last = curL;
 			curL = curL.next;
 		}
+		// 长链表没了
 		if (carry != 0) {
 			last.next = new ListNode(1);
 		}

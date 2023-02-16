@@ -45,8 +45,8 @@ public class Code07_CopyListWithRandom {
 		Node cur = head;
 		Node next = null;
 		// 1 -> 2 -> 3 -> null
-		// 1 -> 1' -> 2 -> 2' -> 3 -> 3'
 		while (cur != null) {
+			// 1 -> 1' -> 2(next) -> ...
 			next = cur.next;
 			cur.next = new Node(cur.val);
 			cur.next.next = next;
@@ -54,11 +54,15 @@ public class Code07_CopyListWithRandom {
 		}
 		cur = head;
 		Node copy = null;
-		// 1 1' 2 2' 3 3'
+		// 1 1' 2 2' 3 3' null
 		// 依次设置 1' 2' 3' random指针
 		while (cur != null) {
+			// 1 -> 1' -> 2(next)
 			next = cur.next.next;
+			// cur  1
+			// copy 1'
 			copy = cur.next;
+			// 1'.random = 
 			copy.random = cur.random != null ? cur.random.next : null;
 			cur = next;
 		}
@@ -67,9 +71,14 @@ public class Code07_CopyListWithRandom {
 		// 老 新 混在一起，next方向上，random正确
 		// next方向上，把新老链表分离
 		while (cur != null) {
+			// 1 -> 1' -> 2(next) -> 2'
 			next = cur.next.next;
+			// cur  1
+			// copy 1'
 			copy = cur.next;
+			// 1 -> 2
 			cur.next = next;
+			// 1' -next->
 			copy.next = next != null ? next.next : null;
 			cur = next;
 		}
