@@ -1,6 +1,6 @@
 package class02;
 
-public class Code07_FindFirstIntersectNode {
+public class Code04_FindFirstIntersectNode {
 
 	public static class Node {
 		public int value;

@@ -3,7 +3,7 @@ package class02;
 import java.util.HashMap;
 
 // 测试链接 : https://leetcode.com/problems/copy-list-with-random-pointer/
-public class Code04_CopyListWithRandom {
+public class Code07_CopyListWithRandom {
 
 	public static class Node {
 		int val;
