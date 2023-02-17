@@ -29,8 +29,8 @@ public class Code05_KokoEatingBananas {
 	// piles : 每一堆香蕉的个数，都在piles里
 	// speed : 猩猩的速度
 	// 在这个速度下，几小时吃完！
-	public static int hours(int[] piles, int speed) {
-		int ans = 0;
+	public static long hours(int[] piles, int speed) {
+		long ans = 0;
 		int offset = speed - 1;
 		for (int pile : piles) {
 			ans += (pile + offset) / speed;
