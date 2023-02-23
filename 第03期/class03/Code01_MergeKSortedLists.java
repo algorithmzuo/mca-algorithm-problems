@@ -3,14 +3,16 @@ package class03;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-// 测试链接：https://leetcode.com/problems/merge-k-sorted-lists/
-public class Code09_MergeKSortedLists {
+// 测试链接：https://leetcode.cn/problems/merge-k-sorted-lists/
+public class Code01_MergeKSortedLists {
 
+	// 这个类不提交
 	public static class ListNode {
 		public int val;
 		public ListNode next;
 	}
 
+	// 提交以下方法
 	public static class ListNodeComparator implements Comparator<ListNode> {
 
 		@Override
