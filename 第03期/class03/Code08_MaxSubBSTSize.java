@@ -1,6 +1,12 @@
 package class03;
 
-// 测试链接 : https://leetcode.com/problems/largest-bst-subtree
+// 给定一个二叉树，找到其中最大的二叉搜索树（BST）子树，并返回该子树的大小
+// 其中，最大指的是子树节点数最多的
+// 二叉搜索树（BST）中的所有节点都具备以下属性：
+// 左子树的值小于其父（根）节点的值
+// 右子树的值大于其父（根）节点的值
+// 注意：子树必须包含其所有后代
+// 测试链接 : https://leetcode.cn/problems/largest-bst-subtree
 public class Code08_MaxSubBSTSize {
 
 	// 提交时不要提交这个类

@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+// 给你二叉树的根节点 root ，返回其节点值的 层序遍历
+// 即逐层地从左到右访问所有节点
 // 测试链接 : https://leetcode.cn/problems/binary-tree-level-order-traversal/
 public class Code02_LevelTraversalBT {
 

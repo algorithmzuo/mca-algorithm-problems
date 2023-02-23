@@ -2,7 +2,11 @@ package class03;
 
 import java.util.HashMap;
 
-//测试链接：https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal
+// 给定两个整数数组 preorder 和 inorder
+// 其中 preorder 是二叉树的先序遍历
+// inorder 是同一棵树的中序遍历
+// 请构造二叉树并返回其根节点。
+// 测试链接：https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 public class Code03_ConstructBinaryTreeFromPreorderAndInorderTraversal {
 
 	// 提交时不提交这个类
