@@ -4,7 +4,7 @@ package class03;
 // 一棵二叉树的直径长度是任意两个结点路径长度中的最大值
 // 这条路径可能穿过也可能不穿过根结点
 // 测试链接 : https://leetcode.cn/problems/diameter-of-binary-tree/
-public class Code09_DiameterOfBinaryTree {
+public class Code08_DiameterOfBinaryTree {
 
 	// 提交时不要提交这个类
 	public static class TreeNode {

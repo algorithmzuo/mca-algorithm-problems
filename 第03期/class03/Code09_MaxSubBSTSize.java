@@ -7,7 +7,7 @@ package class03;
 // 右子树的值大于其父（根）节点的值
 // 注意：子树必须包含其所有后代
 // 测试链接 : https://leetcode.cn/problems/largest-bst-subtree
-public class Code08_MaxSubBSTSize {
+public class Code09_MaxSubBSTSize {
 
 	// 提交时不要提交这个类
 	public static class TreeNode {
