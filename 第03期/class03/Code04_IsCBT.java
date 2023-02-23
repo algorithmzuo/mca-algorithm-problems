@@ -1,6 +1,7 @@
 package class03;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 // 给定一个二叉树的 root ，确定它是否是一个 完全二叉树
 // 在一个 完全二叉树 中，除了最后一个关卡外，所有关卡都是完全被填满的
@@ -25,26 +26,24 @@ public class Code04_IsCBT {
 		if (head == null) {
 			return true;
 		}
-		LinkedList<TreeNode> queue = new LinkedList<>();
-		boolean leaf = false;
-		TreeNode l = null;
-		TreeNode r = null;
+		Queue<TreeNode> queue = new LinkedList<>();
 		queue.add(head);
+		// 一旦遇到不双全的节点，接下来遇到的所有节点都必须是叶！
+		boolean mustLeafStage = false;
 		while (!queue.isEmpty()) {
-			head = queue.poll();
-			l = head.left;
-			r = head.right;
-			if ((leaf && (l != null || r != null)) || (l == null && r != null)) {
+			TreeNode cur = queue.poll();
+			if ((cur.left == null && cur.right != null) 
+					|| (mustLeafStage && (cur.left != null || cur.right != null))) {
 				return false;
 			}
-			if (l != null) {
-				queue.add(l);
+			if(cur.left == null || cur.right == null) {
+				mustLeafStage = true;
 			}
-			if (r != null) {
-				queue.add(r);
+			if (cur.left != null) {
+				queue.add(cur.left);
 			}
-			if (l == null || r == null) {
-				leaf = true;
+			if (cur.right != null) {
+				queue.add(cur.right);
 			}
 		}
 		return true;

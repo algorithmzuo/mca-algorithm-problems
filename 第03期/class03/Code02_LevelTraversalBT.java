@@ -28,7 +28,9 @@ public class Code02_LevelTraversalBT {
 			Queue<TreeNode> queue = new LinkedList<>();
 			queue.add(root);
 			while (!queue.isEmpty()) {
+				// 当前轮做几次动作
 				int size = queue.size();
+				// 当前层的链表
 				List<Integer> curLevel = new ArrayList<>();
 				for (int i = 0; i < size; i++) {
 					TreeNode cur = queue.poll();

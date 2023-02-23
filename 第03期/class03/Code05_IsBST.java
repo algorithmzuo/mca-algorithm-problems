@@ -20,13 +20,6 @@ public class Code05_IsBST {
 	}
 
 	// 提交以下的方法
-	public boolean isValidBST(TreeNode root) {
-		if (root == null) {
-			return true;
-		}
-		return process(root).isBST;
-	}
-
 	public static class Info {
 		public boolean isBST;
 		public int min;
@@ -39,28 +32,41 @@ public class Code05_IsBST {
 		}
 	}
 
-	public static Info process(TreeNode root) {
+	public boolean isValidBST(TreeNode root) {
 		if (root == null) {
+			return true;
+		}
+		return process(root).isBST;
+	}
+
+	public static Info process(TreeNode x) {
+		if (x == null) {
 			return null;
 		}
-		Info left = process(root.left);
-		Info right = process(root.right);
-		int min = root.val;
-		int max = root.val;
-		boolean isBST = true;
-		if (left != null) {
-			min = Math.min(min, left.min);
-			max = Math.max(max, left.max);
-			if (!left.isBST || left.max >= root.val) {
-				isBST = false;
-			}
+		Info leftInfo = process(x.left);
+		Info rightInfo = process(x.right);
+		int min = x.val;
+		int max = x.val;
+		if (leftInfo != null) {
+			min = Math.min(leftInfo.min, min);
+			max = Math.max(leftInfo.max, max);
 		}
-		if (right != null) {
-			min = Math.min(min, right.min);
-			max = Math.max(max, right.max);
-			if (!right.isBST || root.val >= right.min) {
-				isBST = false;
-			}
+		if (rightInfo != null) {
+			min = Math.min(rightInfo.min, min);
+			max = Math.max(rightInfo.max, max);
+		}
+		boolean isBST = true;
+		if (leftInfo != null && !leftInfo.isBST) {
+			isBST = false;
+		}
+		if (rightInfo != null && !rightInfo.isBST) {
+			isBST = false;
+		}
+		if (leftInfo != null && leftInfo.max >= x.val) {
+			isBST = false;
+		}
+		if (rightInfo != null && rightInfo.min <= x.val) {
+			isBST = false;
 		}
 		return new Info(isBST, min, max);
 	}
