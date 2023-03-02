@@ -103,12 +103,12 @@ public class Code07_LRUCache {
 				node.val = value;
 				nodeList.moveNodeToTail(node);
 			} else {
+				if (keyNodeMap.size() == capacity) {
+					removeMostUnusedCache();
+				}
 				Node newNode = new Node(key, value);
 				keyNodeMap.put(key, newNode);
 				nodeList.addNode(newNode);
-				if (keyNodeMap.size() == capacity + 1) {
-					removeMostUnusedCache();
-				}
 			}
 		}
 
