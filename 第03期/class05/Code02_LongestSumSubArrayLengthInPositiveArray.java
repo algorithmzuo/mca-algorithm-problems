@@ -1,4 +1,4 @@
-package class04;
+package class05;
 
 public class Code02_LongestSumSubArrayLengthInPositiveArray {
 

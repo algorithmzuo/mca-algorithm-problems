@@ -6,7 +6,7 @@ package class04;
 // 并且最下面一层的节点都集中在该层最左边的若干位置
 // 若最底层为第 h 层，则该层包含 1~ 2h 个节点。
 // 测试链接 : https://leetcode.cn/problems/count-complete-tree-nodes/
-public class Code07_CompleteTreeNodeNumber {
+public class Code01_CompleteTreeNodeNumber {
 
 	// 提交时不要提交这个类
 	public class TreeNode {
