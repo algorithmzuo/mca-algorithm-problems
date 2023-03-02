@@ -2,8 +2,8 @@ package class04;
 
 import java.util.HashMap;
 
-// 本题测试链接 : https://leetcode.cn/problems/lru-cache/
-public class Code08_LRUCache {
+// 测试链接 : https://leetcode.cn/problems/lru-cache/
+public class Code07_LRUCache {
 
 	// 提交以下这个类
 	public class LRUCache {
