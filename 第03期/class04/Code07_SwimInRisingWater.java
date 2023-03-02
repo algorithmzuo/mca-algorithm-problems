@@ -1,7 +1,6 @@
 package class04;
 
 import java.util.Arrays;
-import java.util.PriorityQueue;
 
 // 在一个 n x n 的整数矩阵 grid 中，
 // 每一个方格的值 grid[i][j] 表示位置 (i, j) 的平台高度。
@@ -14,14 +13,9 @@ import java.util.PriorityQueue;
 // 测试链接 ：https://leetcode.cn/problems/swim-in-rising-water
 public class Code07_SwimInRisingWater {
 
-	// 并查集的解法
-	public static int swimInWater1(int[][] grid) {
-		// 行号
+	public static int swimInWater(int[][] grid) {
 		int n = grid.length;
-		// 列号
 		int m = grid[0].length;
-		// [0,0,5]
-		// [0,1,3]....
 		int[][] points = new int[n * m][3];
 		int pi = 0;
 		for (int i = 0; i < n; i++) {
@@ -31,11 +25,7 @@ public class Code07_SwimInRisingWater {
 				points[pi++][2] = grid[i][j];
 			}
 		}
-		// 所有格子小对象，生成好了!
-		// 排序！[a,b,c]  [d,e,f]
 		Arrays.sort(points, (a, b) -> a[2] - b[2]);
-		// 生成并查集！n * m
-		// 初始化的时候，把所有格子独自成一个集合！
 		UnionFind uf = new UnionFind(n, m);
 		int ans = 0;
 		for (int i = 0; i < points.length; i++) {
@@ -115,41 +105,6 @@ public class Code07_SwimInRisingWater {
 			return find(index(row1, col1)) == find(index(row2, col2));
 		}
 
-	}
-
-	// Dijkstra算法
-	public static int swimInWater2(int[][] grid) {
-		int n = grid.length;
-		int m = grid[0].length;
-		PriorityQueue<int[]> heap = new PriorityQueue<>((a, b) -> a[2] - b[2]);
-		boolean[][] visited = new boolean[n][m];
-		heap.add(new int[] { 0, 0, grid[0][0] });
-		int ans = 0;
-		while (!heap.isEmpty()) {
-			int r = heap.peek()[0];
-			int c = heap.peek()[1];
-			int v = heap.peek()[2];
-			heap.poll();
-			if (visited[r][c]) {
-				continue;
-			}
-			visited[r][c] = true;
-			if (r == n - 1 && c == m - 1) {
-				ans = v;
-				break;
-			}
-			add(grid, heap, visited, r - 1, c, v);
-			add(grid, heap, visited, r + 1, c, v);
-			add(grid, heap, visited, r, c - 1, v);
-			add(grid, heap, visited, r, c + 1, v);
-		}
-		return ans;
-	}
-
-	public static void add(int[][] grid, PriorityQueue<int[]> heap, boolean[][] visited, int r, int c, int preV) {
-		if (r >= 0 && r < grid.length && c >= 0 && c < grid[0].length && !visited[r][c]) {
-			heap.add(new int[] { r, c, preV + Math.max(0, grid[r][c] - preV) });
-		}
 	}
 
 }
