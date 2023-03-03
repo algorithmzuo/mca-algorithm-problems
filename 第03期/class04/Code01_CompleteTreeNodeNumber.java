@@ -16,6 +16,7 @@ public class Code01_CompleteTreeNodeNumber {
 	}
 
 	// 提交如下的方法
+	// head为头的树一定是完全二叉树，保证这一点！
 	public static int countNodes(TreeNode head) {
 		if (head == null) {
 			return 0;
@@ -23,22 +24,26 @@ public class Code01_CompleteTreeNodeNumber {
 		return bs(head, 1, mostLeftLevel(head, 1));
 	}
 
-	// 当前来到node节点，node节点在level层，总层数是h
-	// 返回node为头的子树(必是完全二叉树)，有多少个节点
+	// node : 当前来到的树的头部，当前这棵树一定是完全二叉树！
+	// Level : 在整棵大树中，node在第几层
+	// h : 在整棵大树中，一共有几层
+	// 返回 : 以node为头的完全二叉树有几个节点
+	// 时间复杂度O((logN)的平方) ，远好于，都遍历一遍所有的节点
 	public static int bs(TreeNode node, int Level, int h) {
 		if (Level == h) {
 			return 1;
 		}
 		if (mostLeftLevel(node.right, Level + 1) == h) {
+			// (1 << (h - Level)) 就代表 : 2的(h-level)次方
 			return (1 << (h - Level)) + bs(node.right, Level + 1, h);
 		} else {
 			return (1 << (h - Level - 1)) + bs(node.left, Level + 1, h);
 		}
 	}
 
-	// 如果node在第level层，
-	// 求以node为头的子树，最大深度是多少
-	// node为头的子树，一定是完全二叉树
+	// node，此时在level层
+	// 请顺着node的left指针，往下扎
+	// 返回最终的深度
 	public static int mostLeftLevel(TreeNode node, int level) {
 		while (node != null) {
 			level++;

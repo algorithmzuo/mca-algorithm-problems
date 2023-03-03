@@ -1,4 +1,4 @@
-package class04;
+package class05;
 
 // 有 n 个城市，其中一些彼此相连，另一些没有相连
 // 如果城市 a 与城市 b 直接相连
