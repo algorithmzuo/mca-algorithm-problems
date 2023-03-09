@@ -13,7 +13,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.StreamTokenizer;
 
-public class Code03_UnionFind {
+public class Code05_UnionFind {
 
 	public static int MAXN = 1000001;
 

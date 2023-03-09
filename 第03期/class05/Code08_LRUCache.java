@@ -3,7 +3,7 @@ package class05;
 import java.util.HashMap;
 
 // 测试链接 : https://leetcode.cn/problems/lru-cache/
-public class Code07_LRUCache {
+public class Code08_LRUCache {
 
 	// 提交以下这个类
 	public class LRUCache {

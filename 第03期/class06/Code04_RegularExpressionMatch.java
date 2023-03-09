@@ -1,4 +1,4 @@
-package class05;
+package class06;
 
 // 测试链接 : https://leetcode.com/problems/regular-expression-matching/
 public class Code04_RegularExpressionMatch {
