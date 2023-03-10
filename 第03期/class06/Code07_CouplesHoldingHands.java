@@ -1,4 +1,4 @@
-package class05;
+package class06;
 
 // n对情侣坐在连续排列的 2n 个座位上，想要牵到对方的手
 // 人和座位由一个整数数组 row 表示，其中 row[i] 是坐在第 i 个座位上的人的ID

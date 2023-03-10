@@ -3,7 +3,7 @@ package class05;
 import java.util.HashMap;
 
 // 测试链接 : https://leetcode.cn/problems/lru-cache/
-public class Code08_LRUCache {
+public class Code05_LRUCache {
 
 	// 提交以下这个类
 	public class LRUCache {
@@ -43,28 +43,28 @@ public class Code08_LRUCache {
 				}
 			}
 
-			public void moveNodeToTail(Node node) {
-				if (tail == node) {
+			public void moveNodeToTail(Node x) {
+				if (tail == x) {
 					return;
 				}
-				if (head == node) {
-					head = node.next;
+				if (head == x) { // x在头部
+					head = x.next;
 					head.last = null;
 				} else {
-					node.last.next = node.next;
-					node.next.last = node.last;
+					x.last.next = x.next;
+					x.next.last = x.last;
 				}
-				node.last = tail;
-				node.next = null;
-				this.tail.next = node;
-				this.tail = node;
+				x.last = tail;
+				x.next = null;
+				tail.next = x;
+				tail = x;
 			}
 
 			public Node removeHead() {
 				if (head == null) {
 					return null;
 				}
-				Node ans = this.head;
+				Node ans = head;
 				if (head == tail) {
 					head = null;
 					tail = null;
@@ -78,8 +78,11 @@ public class Code08_LRUCache {
 
 		}
 
+		//  A -> Node
 		private HashMap<Integer, Node> keyNodeMap;
+		// Node 串成的双向链表
 		private DoubleLinkedList nodeList;
+		// 这个结构的容量!
 		private final int capacity;
 
 		public LRUCache(int cap) {
@@ -97,12 +100,16 @@ public class Code08_LRUCache {
 			return -1;
 		}
 
+		// A 23
 		public void put(int key, int value) {
 			if (keyNodeMap.containsKey(key)) {
 				Node node = keyNodeMap.get(key);
 				node.val = value;
 				nodeList.moveNodeToTail(node);
 			} else {
+				// 之前没有A的记录，新增!
+				// 1) 结构满了
+				// 2) 结构没有满
 				if (keyNodeMap.size() == capacity) {
 					removeMostUnusedCache();
 				}

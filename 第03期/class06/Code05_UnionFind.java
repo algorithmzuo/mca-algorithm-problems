@@ -1,4 +1,4 @@
-package class05;
+package class06;
 
 // 测试链接 : https://www.nowcoder.com/questionTerminal/e7ed657974934a30b2010046536a5372
 // 请务必理解这个文件的实现，而且还提供了测试链接
