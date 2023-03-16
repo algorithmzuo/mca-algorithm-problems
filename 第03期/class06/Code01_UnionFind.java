@@ -1,7 +1,7 @@
 package class06;
 
+// 并查集实现
 // 测试链接 : https://www.nowcoder.com/questionTerminal/e7ed657974934a30b2010046536a5372
-// 请务必理解这个文件的实现，而且还提供了测试链接
 // 提交如下的code，并把主类名改成"Main"
 // 在测试链接里可以直接通过
 // 请同学们务必参考如下代码中关于输入、输出的处理
@@ -13,7 +13,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.StreamTokenizer;
 
-public class Code05_UnionFind {
+public class Code01_UnionFind {
 
 	public static int MAXN = 1000001;
 

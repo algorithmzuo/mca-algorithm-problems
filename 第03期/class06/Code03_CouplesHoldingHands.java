@@ -6,7 +6,7 @@ package class06;
 // 返回 最少交换座位的次数，以便每对情侣可以并肩坐在一起
 // 每次交换可选择任意两人，让他们站起来交换座位
 // 测试链接 : https://leetcode.cn/problems/couples-holding-hands/
-public class Code07_CouplesHoldingHands {
+public class Code03_CouplesHoldingHands {
 
 	public int minSwapsCouples(int[] row) {
 		int n = row.length;

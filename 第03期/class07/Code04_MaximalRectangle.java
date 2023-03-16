@@ -1,4 +1,4 @@
-package class06;
+package class07;
 
 import java.util.Stack;
 

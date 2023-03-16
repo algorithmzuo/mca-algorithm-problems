@@ -9,7 +9,7 @@ import java.util.HashMap;
 // 其中 stones[i] = [xi, yi] 表示第 i 块石头的位置，
 // 返回 可以移除的石子 的最大数量。
 // 测试链接 : https://leetcode.cn/problems/most-stones-removed-with-same-row-or-column/
-public class Code06_MostStonesRemovedWithSameRowOrColumn {
+public class Code02_MostStonesRemovedWithSameRowOrColumn {
 
 	public static int removeStones(int[][] stones) {
 		int n = stones.length;
