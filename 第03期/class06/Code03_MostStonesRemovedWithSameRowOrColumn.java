@@ -9,25 +9,27 @@ import java.util.HashMap;
 // 其中 stones[i] = [xi, yi] 表示第 i 块石头的位置，
 // 返回 可以移除的石子 的最大数量。
 // 测试链接 : https://leetcode.cn/problems/most-stones-removed-with-same-row-or-column/
-public class Code02_MostStonesRemovedWithSameRowOrColumn {
+public class Code03_MostStonesRemovedWithSameRowOrColumn {
 
 	public static int removeStones(int[][] stones) {
 		int n = stones.length;
-		HashMap<Integer, Integer> rowPre = new HashMap<Integer, Integer>();
-		HashMap<Integer, Integer> colPre = new HashMap<Integer, Integer>();
+		// key : 某行 value : 首块石头的编号
+		HashMap<Integer, Integer> rowFirst = new HashMap<Integer, Integer>();
+		// key : 某列 value : 首块石头的编号
+		HashMap<Integer, Integer> colFirst = new HashMap<Integer, Integer>();
 		UnionFind uf = new UnionFind(n);
 		for (int i = 0; i < n; i++) {
 			int x = stones[i][0];
 			int y = stones[i][1];
-			if (!rowPre.containsKey(x)) {
-				rowPre.put(x, i);
+			if (!rowFirst.containsKey(x)) {
+				rowFirst.put(x, i);
 			} else {
-				uf.union(i, rowPre.get(x));
+				uf.union(i, rowFirst.get(x));
 			}
-			if (!colPre.containsKey(y)) {
-				colPre.put(y, i);
+			if (!colFirst.containsKey(y)) {
+				colFirst.put(y, i);
 			} else {
-				uf.union(i, colPre.get(y));
+				uf.union(i, colFirst.get(y));
 			}
 		}
 		return n - uf.sets();

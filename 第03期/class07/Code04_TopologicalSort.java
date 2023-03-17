@@ -1,4 +1,4 @@
-package class06;
+package class07;
 
 // 根据入度来求拓扑排序，牛客网的测试数据
 // 测试链接 : https://www.nowcoder.com/questionTerminal/88f7e156ca7d43a1a535f619cd3f495c

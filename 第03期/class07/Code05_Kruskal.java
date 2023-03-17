@@ -1,4 +1,4 @@
-package class06;
+package class07;
 
 // 课上没讲这个实现
 // 因为是一样的，都是用Kruskal算法实现最小生成树，只不过是牛客网的测试数据
