@@ -1,7 +1,7 @@
 package class07;
 
-// 课上没讲这个实现
-// 因为是一样的，都是用Kruskal算法实现最小生成树，只不过是牛客网的测试数据
+// 用Kruskal算法实现最小生成树
+// 牛客网的测试数据
 // 测试链接 : https://www.nowcoder.com/questionTerminal/c23eab7bb39748b6b224a8a3afbe396b
 // 请同学们务必参考如下代码中关于输入、输出的处理
 // 这是输入输出处理效率很高的写法
