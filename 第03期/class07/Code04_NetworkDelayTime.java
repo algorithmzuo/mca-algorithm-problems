@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 // Dijkstra算法
 // leetcode 743题，可以用这道题来练习Dijkstra算法
 // 测试链接 : https://leetcode.com/problems/network-delay-time
-public class Code07_NetworkDelayTime {
+public class Code04_NetworkDelayTime {
 
 	public static int networkDelayTime(int[][] times, int n, int k) {
 		ArrayList<ArrayList<int[]>> nexts = new ArrayList<>();

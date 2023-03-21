@@ -14,7 +14,7 @@ import java.util.Arrays;
 // 连接是双向的
 // 请返回 为所有房子都供水的最低总成本
 // 测试链接 : https://leetcode.cn/problems/optimize-water-distribution-in-a-village/
-public class Code06_OptimizeWaterDistributionInVillage {
+public class Code03_OptimizeWaterDistributionInVillage {
 
 	public static int MAXN = 10010;
 

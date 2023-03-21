@@ -14,7 +14,7 @@ import java.io.StreamTokenizer;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Code04_TopologicalSort {
+public class Code01_TopologicalSort {
 
 	public static int MAXN = 200001;
 
