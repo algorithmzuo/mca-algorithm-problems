@@ -32,7 +32,9 @@ public class Code04_NetworkDelayTime {
 			num++;
 			max = Math.max(max, delay);
 			for (int[] next : nexts.get(cur)) {
-				heap.add(new int[] { next[0], delay + next[1] });
+				if (!used[next[0]]) {
+					heap.add(new int[] { next[0], delay + next[1] });
+				}
 			}
 		}
 		return num < n ? -1 : max;
