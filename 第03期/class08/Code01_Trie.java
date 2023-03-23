@@ -10,8 +10,11 @@ public class Code01_Trie {
 	class Trie {
 
 		class Node {
+			// 该节点通过了几次
 			public int pass;
+			// 有多少个字符串，以该节点结尾
 			public int end;
+
 			public Node[] nexts;
 
 			public Node() {

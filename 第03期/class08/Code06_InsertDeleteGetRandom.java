@@ -18,8 +18,11 @@ public class Code06_InsertDeleteGetRandom {
 
 	public class RandomizedSet {
 
+		// v -> i
 		private HashMap<Integer, Integer> keyIndexMap;
+		// i -> v
 		private HashMap<Integer, Integer> indexKeyMap;
+		// 几个数进来了
 		private int size;
 
 		public RandomizedSet() {
@@ -38,9 +41,15 @@ public class Code06_InsertDeleteGetRandom {
 		}
 
 		public boolean remove(int val) {
+			// 拿最后的位置，填上当前要删掉数字的，洞！
 			if (keyIndexMap.containsKey(val)) {
+				// 删掉 30   7
+				// size-1位置的数字，填洞
+				// 查出30在7位置
 				int deleteIndex = keyIndexMap.get(val);
+				// 最后位置是啥？size - 1
 				int lastIndex = --size;
+				// x   lastKey
 				int lastKey = indexKeyMap.get(lastIndex);
 				keyIndexMap.put(lastKey, deleteIndex);
 				indexKeyMap.put(deleteIndex, lastKey);

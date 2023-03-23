@@ -16,7 +16,10 @@ public class Code03_PrefixAndSuffixSearch {
 	class WordFilter {
 
 		class TrieNode {
+			//  new TrieNode[26]
 			TrieNode[] nexts;
+			// pass end 不要！这题不需要！
+			// 有哪些字符串划过了这个节点，这些字符串的下标，记录！
 			ArrayList<Integer> indies;
 
 			public TrieNode() {
@@ -29,10 +32,12 @@ public class Code03_PrefixAndSuffixSearch {
 
 		TrieNode sufHead;
 
+		// 初始化，有所有的字符串！
 		public WordFilter(String[] words) {
 			preHead = new TrieNode();
 			sufHead = new TrieNode();
 			for (int i = 0; i < words.length; i++) {
+				// 所有字符串，i
 				String word = words[i];
 				TrieNode cur = preHead;
 				for (int j = 0; j < word.length(); j++) {
@@ -55,28 +60,30 @@ public class Code03_PrefixAndSuffixSearch {
 			}
 		}
 
+		// 给前缀 pref
+		// 给后缀 suff
 		public int f(String pref, String suff) {
 			ArrayList<Integer> preList = null;
 			TrieNode cur = preHead;
 			for (int i = 0; i < pref.length() && cur != null; i++) {
 				cur = cur.nexts[pref.charAt(i) - 'a'];
 			}
+			if(cur == null) {
+				return -1;
+			}
 			if (cur != null) {
 				preList = cur.indies;
-			}
-			if (preList == null) {
-				return -1;
 			}
 			ArrayList<Integer> sufList = null;
 			cur = sufHead;
 			for (int i = suff.length() - 1; i >= 0 && cur != null; i--) {
 				cur = cur.nexts[suff.charAt(i) - 'a'];
 			}
+			if(cur == null) {
+				return -1;
+			}
 			if (cur != null) {
 				sufList = cur.indies;
-			}
-			if (sufList == null) {
-				return -1;
 			}
 			ArrayList<Integer> small = preList.size() <= sufList.size() ? preList : sufList;
 			ArrayList<Integer> big = small == preList ? sufList : preList;

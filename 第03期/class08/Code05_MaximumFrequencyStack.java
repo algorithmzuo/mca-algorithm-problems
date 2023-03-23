@@ -17,14 +17,18 @@ public class Code05_MaximumFrequencyStack {
 		// 出现的最大次数
 		private int topTimes;
 		// 每层节点
-		private HashMap<Integer, ArrayList<Integer>> cntValues = new HashMap<>();
+		// HashMap -> ArrayList
+		private HashMap<Integer, ArrayList<Integer>>
+		cntValues = new HashMap<>();
+		
+		
 		// 每一个数出现了几次
 		private HashMap<Integer, Integer> valueTopTime = new HashMap<>();
 
 		public void push(int val) {
 			// 当前数词频+1
 			valueTopTime.put(val, valueTopTime.getOrDefault(val, 0) + 1);
-			// 当前数是什么词频 5 7次
+			// 当前数是什么词频
 			int curTopTimes = valueTopTime.get(val);
 			if (!cntValues.containsKey(curTopTimes)) {
 				cntValues.put(curTopTimes, new ArrayList<>());

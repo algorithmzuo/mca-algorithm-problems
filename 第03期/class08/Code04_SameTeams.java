@@ -29,6 +29,7 @@ public class Code04_SameTeams {
 		TrieNode root = new TrieNode();
 		TrieNode cur = null;
 		for (int i = 0; i < as.length; i++) {
+			// as[i] -> {4, 7, 3, 9}
 			cur = root;
 			for (int j = 1; j < as[i].length; j++) {
 				int diff = as[i][j] - as[i][j - 1];
@@ -41,6 +42,8 @@ public class Code04_SameTeams {
 		}
 		int[] ans = new int[bs.length];
 		for (int i = 0; i < bs.length; i++) {
+			// bs[i] = {4 5 9 3 2 ..}
+			// ans[i] = 0个
 			cur = root;
 			for (int j = 1; j < bs[i].length; j++) {
 				int diff = bs[i][j] - bs[i][j - 1];
