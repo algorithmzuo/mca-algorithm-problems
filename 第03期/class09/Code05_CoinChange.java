@@ -76,4 +76,16 @@ public class Code05_CoinChange {
 		return dp[aim];
 	}
 
+	public static int change5(int aim, int[] arr) {
+		int n = arr.length;
+		int[] dp = new int[aim + 1];
+		dp[0] = 1;
+		for (int i = n - 1; i >= 0; i--) {
+			for (int j = arr[i]; j <= aim; j++) {
+				dp[j] += dp[j - arr[i]];
+			}
+		}
+		return dp[aim];
+	}
+
 }
