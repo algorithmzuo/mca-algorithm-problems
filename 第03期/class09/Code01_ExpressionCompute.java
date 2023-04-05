@@ -10,6 +10,7 @@ import java.util.LinkedList;
 // 本题测试链接 : https://leetcode.cn/problems/basic-calculator-iii/
 public class Code01_ExpressionCompute {
 
+	// "7 + 3 0 * ( 7 + 2 ) + ...."
 	public static int calculate(String str) {
 		return f(str.toCharArray(), 0)[0];
 	}
