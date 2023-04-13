@@ -9,7 +9,7 @@ package class10;
 // 两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列
 // 这个问题leetcode上可以直接测
 // 链接：https://leetcode.cn/problems/longest-common-subsequence/
-public class Code06_LongestCommonSubsequence {
+public class Code02_LongestCommonSubsequence {
 
 	public static int longestCommonSubsequence1(String s1, String s2) {
 		if (s1 == null || s2 == null || s1.length() == 0 || s2.length() == 0) {

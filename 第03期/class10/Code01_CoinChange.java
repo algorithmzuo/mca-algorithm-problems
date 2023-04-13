@@ -5,7 +5,7 @@ package class10;
 // 假设每一种面额的硬币有无限个
 // 题目数据保证结果符合 32 位带符号整数
 // 测试链接 : https://leetcode.cn/problems/coin-change-ii/
-public class Code05_CoinChange {
+public class Code01_CoinChange {
 
 	public static int change1(int aim, int[] arr) {
 		return process1(arr, 0, aim);

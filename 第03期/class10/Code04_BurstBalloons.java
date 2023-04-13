@@ -1,7 +1,7 @@
 package class10;
 
 // 本题测试链接 : https://leetcode.com/problems/burst-balloons/
-public class Code01_BurstBalloons {
+public class Code04_BurstBalloons {
 
 	public static int maxCoins0(int[] arr) {
 		// [3,2,1,3]
