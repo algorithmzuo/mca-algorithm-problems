@@ -49,7 +49,7 @@ public class Code03_BurstBalloons {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 3, 3, 3, 3, 3 };
+		int[] arr = { 3, 3, 4, 3, 3 };
 		System.out.println(maxCoins(arr));
 		ArrayList<ArrayList<Integer>> paths = maxCoins2(arr);
 		for (ArrayList<Integer> path : paths) {
@@ -125,7 +125,7 @@ public class Code03_BurstBalloons {
 		if (l == r) {
 			path.add(l);
 			if (path.size() == n) {
-				ans.add(path);
+				addPath(ans, path);
 			}
 		} else {
 			if (dp[l + 1][r] + arr[l - 1] * arr[l] * arr[r + 1] == dp[l][r]) {
@@ -143,10 +143,16 @@ public class Code03_BurstBalloons {
 				int right = dp[m + 1][r];
 				int mid = arr[l - 1] * arr[m] * arr[r + 1];
 				if (left + right + mid == dp[l][r]) {
-					ArrayList<Integer> p = new ArrayList<>(path);
-					p.add(r);
-					generatePath2(dp, arr, l, m - 1, n, p, ans);
-					generatePath2(dp, arr, m + 1, r, n, p, ans);
+					// 可以先左、后右
+					ArrayList<Integer> p1 = new ArrayList<>(path);
+					p1.add(m);
+					generatePath2(dp, arr, l, m - 1, n, p1, ans);
+					generatePath2(dp, arr, m + 1, r, n, p1, ans);
+					// 也可以先右、后左
+					ArrayList<Integer> p2 = new ArrayList<>(path);
+					p2.add(m);
+					generatePath2(dp, arr, m + 1, r, n, p2, ans);
+					generatePath2(dp, arr, l, m - 1, n, p2, ans);
 				}
 			}
 		}
